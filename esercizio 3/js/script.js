@@ -1,20 +1,18 @@
-// jsnack 4 blocco 2
-// Dare la possibilità di inserire due parole. Verificare tramite
-// una funzione che le due parole abbiano la stessa lunghezza.
-// Se hanno la stessa lunghezza, stamparle entrambe
-// altrimenti stampare la più lunga delle due.
+// blocco 2
+// snack3 Crea un array di numeri interi e fai la somma di tutti gli
+// elementi che sono in posizione dispari
 
-parola1 = prompt("inserire la prima parola");
-parola2 = prompt("inserire la seconda parola");
+$(document).ready(function() {
+  var array = [20,14,45,123,545,3,6,78,88,300];
+  console.log(sommaPosizioniDispari(array));
+});
 
-console.log(confrontaLunghezza(parola1, parola2));
-
-function confrontaLunghezza(string1, string2) {
-  risultato = string1;
-  if (string1.length == string2.length) {
-    risultato = string1 + " " + string2;
-  } else if (string2.length > string1.length) {
-    risultato = string2;
-  } 
-  return risultato;
+function sommaPosizioniDispari(array) {
+  somma = 0;
+  for (var i = 0; i < array.length; i++) {
+    if (i % 2 == 0) {
+      somma += array[i];
+    }
+  }
+  return somma;
 }
